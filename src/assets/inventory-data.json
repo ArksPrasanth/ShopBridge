@@ -1,0 +1,16 @@
+{
+    "inventory":[
+        {
+            "name":"Table",
+            "description":"It is a table",
+            "price":900,
+            "qty":10
+        },
+        {
+            "name":"Chair",
+            "description":"It is a chair",
+            "price":400,
+            "qty":100
+        }
+    ]
+}

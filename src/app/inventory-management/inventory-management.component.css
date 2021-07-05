@@ -1,0 +1,47 @@
+#logo{
+    width: 100%;
+    height: 200px;
+}
+.pageStyle{
+   
+    background-color: rgb(71, 122, 146);
+}
+.cardStyle{
+    margin-bottom: 20px;
+    background-color:white;
+    border-radius: 15px;
+    /* color: white; */
+    /* background-color: rgb(97, 92, 92);; */
+}
+.manageClass{
+    margin: 5px;
+    padding-top:5px;
+    padding-left: 150px;
+    padding-bottom: 5px;
+    width: 92vw;
+}
+
+.btnCls{
+    /* padding-left: 50px; */
+    width: 150px;
+    margin-left: 100px; 
+}
+#searchstyle{
+    margin-top: 5px;
+    margin-left: 120px;
+    width: 150px;
+}
+.listStyle{
+padding-left:10px;    
+/* padding-bottom:20px; */
+/* width:30%; */
+}
+#imageStyle{
+    padding-top:20px;
+    width:70%;
+    height:200px; 
+}
+
+textarea.ng-invalid.ng-touched,input.ng-invalid.ng-touched{
+    border-color: red;
+}

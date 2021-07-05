@@ -1,0 +1,61 @@
+<div class="pageStyle">
+<img id="logo" src="../assets/logo.png" alt="Image not found">
+<div class="container">
+    <div class="manageClass">
+        <button class="btn btn-success btnCls" (click)="add(mymodal)">Add Inventory</button>
+        <button class="btn btn-info btnCls" (click)="open(mymodal)" [disabled]="!selectedItem">Modify</button>
+        <button class="btn btn-danger btnCls" (click)="InventoryDelete()" [disabled]="!selectedItem">Delete</button>
+        <!-- <input type="text" id="searchstyle" placeholder="Search Title"> -->
+    </div>
+    <div>
+
+        <ng-template #mymodal let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #addForm="ngForm" (ngSubmit)="submit(addForm)">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" name="id" required [(ngModel)]="selectedItem.id">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" required [(ngModel)]="selectedItem.title">
+                    <label for="desc">Description</label>
+                    <textarea class="form-control" name="desc" required [(ngModel)]="selectedItem.description">
+                    </textarea>
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" name="price" required [(ngModel)]="selectedItem.price">
+                    <label for="image">Image</label>
+                    <input type="text" class="form-control" name="image" required [(ngModel)]="selectedItem.image">
+                    <br>
+                    <button type="submit" [disabled]="!addForm.valid" (click)="modal.close('Save click')">Add</button>
+                </form>
+            </div>
+
+        </ng-template>
+
+    </div>
+    <div *ngFor="let inventory of inventoryList" class="card card-header form-control cardStyle">
+        <div class="row listStyle">
+            <div class="col-1">
+                <input type="radio" name="selection" value="" (change)="selectedItem=inventory">
+            </div>
+            <div class="col-8">
+                <p><strong>ID: </strong>{{inventory.id}}</p>
+                <p><strong>Title: </strong>{{inventory.title}}</p>
+                <label><strong>Description: </strong></label>
+                <p>{{inventory.description}}</p>
+                <p><strong>Price: </strong>{{inventory.price}} INR</p>
+            </div>
+            <div class="col-3 listStyle">
+                <img id="imageStyle" src="{{inventory.image}}" alt="Image not available">
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</div>
